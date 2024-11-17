@@ -1,0 +1,14 @@
+﻿@model CRUD_Order_validation_171124.Models.tblOrder
+@{
+    ViewBag.Title = "EditOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>select Product Name to Edit</h2>
+@using (Html.BeginForm())
+{
+    @Html.DropDownListFor(x=>x.Id,new SelectList(ViewBag.orders,"Id","ProductName"),"--Select Product--")@Html.ValidationMessageFor(x=>x.ProductName)<br />
+    <input type="submit"value="Edit" />
+
+}
+

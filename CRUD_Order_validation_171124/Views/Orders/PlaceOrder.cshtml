@@ -1,0 +1,17 @@
+﻿@model  CRUD_Order_validation_171124.Models.ValidationData.OrderValidationClass
+@{
+    ViewBag.Title = "PlaceOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PlaceOrder</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr><td>@Html.LabelFor(x => x.ProductName)</td><td>@Html.TextBoxFor(x => x.ProductName)</td><td>@Html.ValidationMessageFor(x => x.ProductName)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.Price)</td><td>@Html.TextBoxFor(x => x.Price)</td><td>@Html.ValidationMessageFor(x => x.Price)</td></tr>
+        <tr><td>@Html.LabelFor(x => x.Quantity)</td><td>@Html.TextBoxFor(x => x.Quantity)</td><td>@Html.ValidationMessageFor(x => x.Quantity)</td></tr>
+        <tr><td colspan="3"><input type="submit" value="Submit"/></td></tr>
+    </table>
+}
+
